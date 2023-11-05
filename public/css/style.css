@@ -1,0 +1,76 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.container{
+    /* width: 90% !important; */
+    margin:auto;
+}
+.bar{
+    background-color: #7c362d;
+    height: 10px;
+}
+.child-div{
+    display: flex;
+    justify-content: space-between;
+}
+.child-container{
+    width: 90% !important;
+    margin:auto;
+    margin-top: 25px;
+}
+.logo{
+    width: 200px;
+}
+.infos{
+    font-size: 19px;
+}
+.title{
+    font-size: 50px;
+}
+.invoice-info{
+    display: flex;
+    justify-content: space-between;
+}
+.text-bold{
+    font-weight: bold;
+    font-size: 18px;
+}
+.m-top{
+    margin-top: 10px;
+}
+.sm-data{
+    margin-top: 10px;
+}
+.m-sm-top{
+    margin-top: 5px;
+}
+.text-blue{
+    color: blue;
+}
+.bg-color{
+    background-color: #f3f3f3;
+}
+.p-1{
+    padding: 5px 20px;
+}
+.fotter{
+    display: flex;
+     justify-content: space-between;
+}
+.info-name{
+    margin-right: 120px;
+}
+.info-name p {
+    margin-bottom: 10px;
+}
+.info-value p{
+    margin-bottom: 10px;
+
+}
+.lef{
+    text-align: end;
+}
