@@ -68,7 +68,7 @@
         <label class="label" for="discount">Discount</label>
         <input class="form-control"  placeholder="Enter discount amount" type="number" name="discount">
 
-        <label class="label" for="bkash">Bkash</label>
+        <label class="label" for="bkash">Advance Payment</label>
         <input class="form-control"  placeholder="Advance payment amount" type="number" name="bkash">
 
         <button class="submitBoth btn btn-success mt-3" onclick="submitBothForms()">Download pdf file</button>

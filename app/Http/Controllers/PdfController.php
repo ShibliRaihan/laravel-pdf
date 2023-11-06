@@ -35,12 +35,12 @@ class PdfController extends Controller
             'invoice' => ucwords(Str::random(8)),
             'products' => session()->get('p_arr')
         ];
-        $pdf = PDF::loadView('receipt', $data);
-        $pdf->setPaper('A4', 'portrait');
-        $content = $pdf->download('home.pdf');
-        return $content;
+        // $pdf = PDF::loadView('receipt', $data);
+        // $pdf->setPaper('A4', 'portrait');
+        // $content = $pdf->download('home.pdf');
+        // return $content;
 
-        // return view('receipt', $data);
+        return view('receipt', $data);
     }
 
     public function store(Request $req){
