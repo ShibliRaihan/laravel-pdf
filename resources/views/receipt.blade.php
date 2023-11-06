@@ -104,27 +104,27 @@
                 $discount = Session::has('discount') ?  Session::get('discount') : 0;
                 $bkash = Session::has('bkash') ?  Session::get('bkash') : 0;
                 $withShiping =  $shipping  +  $subtotal;
-                $withDiscount =  $withShiping  +  $discount;
+                $withDiscount =  $withShiping  - $discount;
                 $cashonDel = $withDiscount - $bkash;
             @endphp
-            <p style="text-align: right; font-size: 16px;">Subtotal: {{  $subtotal }}&#2547; </p>
+            <p style="text-align: right; font-size: 16px;">Subtotal: {{  $subtotal }}Tk </p>
             <p style="text-align: right; font-size: 16px;">Shipping: 
-                {{ $shipping  }}&#2547;
+                {{ $shipping  }}Tk
             </p>
             <p style="text-align: right; font-size: 16px;">With Shipping
-                {{ $withShiping }}&#2547;
+                {{ $withShiping }}Tk
             </p>
             <p style="text-align: right; font-size: 16px;">Discount: 
-                {{ $discount  }}&#2547;
+                {{ $discount  }}Tk
             </p>
             <p style="text-align: right; font-size: 16px;">Grand Total: 
-                {{ $withDiscount }}&#2547;
+                {{ $withDiscount }}Tk
             </p>
-            <p style="text-align: right; font-size: 16px;">Bkash Payment: 
-                {{ $bkash  }}&#2547; 
+            <p style="text-align: right; font-size: 16px;">Advance Payment: 
+                {{ $bkash  }}Tk 
             </p>
             <br>
-            <p style="text-align: right; font-size: 19px;">Cash On Delivery : TK - {{ $cashonDel }}&#2547;</p>
+            <p style="text-align: right; font-size: 19px;">Cash On Delivery : TK - {{ $cashonDel }}Tk</p>
         </div>
     </div>
 </body>
