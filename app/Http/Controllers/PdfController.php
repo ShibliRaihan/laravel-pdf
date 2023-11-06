@@ -17,7 +17,6 @@ class PdfController extends Controller
         // dd($req->all());
         session()->put('payment', $req->payment);
         session()->put('shopping', $req->shopping);
-        session()->put('transfer', $req->transfer);
         session()->put('name', $req->name);
         session()->put('cel', $req->cel);
         session()->put('addresh', $req->addresh);
@@ -28,7 +27,7 @@ class PdfController extends Controller
         $data = [
             'payment' => session()->get('payment'),
             'shopping' => session()->get('shopping'),
-            'transfer' => session()->get('transfer'),
+            'transfer' => Str::random(10),
             'cel' => session()->get('cel'),
             'addresh' => session()->get('addresh'),
             'name' => session()->get('name'),
@@ -36,12 +35,12 @@ class PdfController extends Controller
             'invoice' => ucwords(Str::random(8)),
             'products' => session()->get('p_arr')
         ];
-        $pdf = PDF::loadView('receipt', $data);
-        $pdf->setPaper('A4', 'portrait');
-        $content = $pdf->download('home.pdf');
-        return $content;
+        // $pdf = PDF::loadView('receipt', $data);
+        // $pdf->setPaper('A4', 'portrait');
+        // $content = $pdf->download('home.pdf');
+        // return $content;
 
-        // return view('receipt', $data);
+        return view('receipt', $data);
     }
 
     public function store(Request $req){
