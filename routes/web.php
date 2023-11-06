@@ -12,23 +12,33 @@ Route::get('/', function () {
 })->name('data');
 
 Route::get('/pdf', function (Request $req) {
+    // dd($req->all());
     session()->put('payment', $req->payment);
+    session()->put('shopping', $req->shopping);
+    session()->put('transfer', $req->transfer);
+    session()->put('name', $req->name);
+    session()->put('cel', $req->cel);
+    session()->put('addresh', $req->addresh);
     $data = [
-        'payment'=> session()->get('payment'),
+        'payment' => session()->get('payment'),
+        'shopping' => session()->get('shopping'),
+        'transfer' => session()->get('transfer'),
+        'cel' => session()->get('cel'),
+        'addresh' => session()->get('addresh'),
+        'name' => session()->get('name'),
         'date' => Carbon::now()->format('Y-m-d'),
-        'invoice' =>  ucwords(Str::random(8)),
+        'invoice' => ucwords(Str::random(8)),
     ];
-    $pdf = PDF::loadView('receipt', $data);
-    $pdf->setPaper('A4', 'portrait');
-    $content = $pdf->download('home.pdf');
-    return $content;
+    // $pdf = PDF::loadView('receipt', $data);
+    // $pdf->setPaper('A4', 'portrait');
+    // $content = $pdf->download('home.pdf');
+    // return $content;
+    return view('receipt', $data);
 })->name('data');
 
-
-// return view('receipt', $data);
 // $content = $pdf->output();
 // Route::get('/paper', function () {
-    
+
 //     // $html = view('receipt');
 //     $pdf = PDF::loadView('receipt');
 //     $content = $pdf->download('home.pdf');

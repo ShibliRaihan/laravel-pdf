@@ -11,6 +11,11 @@
     <form action="{{ route('data') }}" method="get">
         @csrf
         <input type="text" name="payment">
+        <input type="text" name="shopping">
+        <input type="text" name="transfer">
+        <input type="text" name="name">
+        <input type="text" name="cel">
+        <input type="text" name="addresh">
         <input type="submit" value="submit">
     </form>
 </body>
