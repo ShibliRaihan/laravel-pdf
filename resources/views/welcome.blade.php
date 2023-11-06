@@ -45,7 +45,7 @@
 
         </div>
 
-        <button class="addNew btn btn-dark w-full mt-2">Add more</button>
+        <button class="addNew btn btn-dark w-full mt-2">Add Product</button>
         <button type="submit" style="display: none">Submit</button>
     </form>
     <br><br>
