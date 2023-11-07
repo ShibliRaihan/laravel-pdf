@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\PdfController;
-
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,3 +16,5 @@ Route::post('/store/product', [PdfController::class, 'store'])->name('store');
 //     $content = $pdf->download('home.pdf');
 //     return $content;
 // })->name('');
+
+// Route::get('/sheet', [PdfController::class, 'sheet'])->name('sheet');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
+use Revolution\Google\Sheets\Facades\Sheets;
 
 class PdfController extends Controller
 {
@@ -19,7 +20,7 @@ class PdfController extends Controller
         session()->put('shopping', $req->shopping);
         session()->put('name', $req->name);
         session()->put('cel', $req->cel);
-        session()->put('addresh', $req->addresh);
+        session()->put('addresh', $req->address);
         session()->put('discount', $req->discount);
         session()->put('shipping', $req->shipping);
         session()->put('bkash', $req->bkash);
@@ -35,12 +36,13 @@ class PdfController extends Controller
             'invoice' => ucwords(Str::random(8)),
             'products' => session()->get('p_arr')
         ];
-        // $pdf = PDF::loadView('receipt', $data);
-        // $pdf->setPaper('A4', 'portrait');
-        // $content = $pdf->download('home.pdf');
-        // return $content;
+        $this->sheet();
 
-        return view('receipt', $data);
+        $pdf = PDF::loadView('receipt', $data);
+        $pdf->setPaper('A4', 'portrait');
+        $content = $pdf->download('home.pdf');
+        return $content;
+        // return view('receipt', $data);
     }
 
     public function store(Request $req){
@@ -48,6 +50,50 @@ class PdfController extends Controller
         session()->put('p_arr',$req->p_arr);
 
         return session()->get('p_arr');
+    }
+
+    public function sheet() {
+        $spreadsheetId = '1zModzelZwRE4Bf6cLHDES2AWrJ_FeKsBcKMwcPfp6UM';
+        $sheetName = 'Sheet1'; // Replace with the name of your sheet
+        $cellRange = 'A2'; // Replace with the desired cell range (e.g., A1)
+
+        $payment = session()->get('payment');
+        $shopping = session()->get('shopping');
+        $name = session()->get('name');
+        $cel = session()->get('cel');
+        $addresh = session()->get('addresh');
+        $discount = session()->get('discount');
+        $bkash = session()->get('bkash',);
+        $products = session()->get('p_arr');
+
+        $parentRow = [
+            $name,
+
+        ];
+        $productName = '';
+        $productPrice = 0;
+        foreach($products['name'] as $index => $name){
+            $desc = $products['desc'][$index];
+            $qty = $products['qty'][$index];
+            $price = $products['price'][$index];
+ 
+            $productName .=  $name.' pcs'.$qty.', ';
+            $productPrice += $price * $qty;
+            
+        }
+        $parentRow[] = $productName;
+        $parentRow[] = $productPrice;
+        $sheets = Sheets::spreadsheet($spreadsheetId);
+        $sheet = $sheets->sheet($sheetName);
+
+        $parentRow[] = $cel;
+        $parentRow[] = $addresh;
+        $parentRow[] = $bkash;
+
+        // Set the value of the cell to your text
+        $sheet->range($cellRange)->append([$parentRow]);
+
+        return 'Text added to cell ' . $cellRange;
     }
 
 

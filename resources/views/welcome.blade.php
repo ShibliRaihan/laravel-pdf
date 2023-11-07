@@ -72,7 +72,10 @@
         <label class="label" for="bkash">Bkash</label>
         <input class="form-control"  placeholder="Advance payment amount" type="number" name="bkash">
 
-        <button class="submitBoth btn btn-success mt-3" onclick="submitBothForms()">Download pdf file</button>
+        <div class="d-flex gap-2 mt-3">
+            <button class="submitBoth btn btn-success " onclick="submitBothForms()">Download PDF File</button>
+            <button class="btn btn-primary ">Save into spreadsheet</button>
+        </div>
 
     </form>
 
@@ -108,6 +111,8 @@
         }
     });
 
+
+    
 
     // Remove item when a .removeItem button is clicked using event delegation
     $('#details_product').on('click', '.btn-close', function(e) {

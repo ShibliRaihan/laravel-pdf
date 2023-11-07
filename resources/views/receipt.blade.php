@@ -10,7 +10,8 @@
 <style>
     *{
         margin: 0px;padding: 0px;box-sizing: border-box;
-        font-family: Verdana, Geneva, Tahoma, sans-serif
+        /* font-family: Verdana, Geneva, Tahoma, sans-serif */
+        font-family:sans-serif
     }
 
 </style>
@@ -40,7 +41,7 @@
                     </td>
                 </tr>
             </table>
-            <h1 style="font-size: 35px; font-weight: medium; text-align: left;">Pre-Order</h1>
+            <h1 style="font-size: 30px; font-weight: medium; text-align: left;">Pre-Order</h1>
             <table width="100%">
                 <tr>
                     <td style="font-weight: medium; font-size: 18px;">Date</td>
@@ -63,7 +64,7 @@
             </table>
             <hr style="margin-top: 10px;" />
             <h2 style="font-size: 20px; margin-top: 10px;">{{ $name }}</h2>
-            <p style="margin-top: 5px; font-size: 19px;">Cel - 88{{ $cel }}</p>
+            <p style="margin-top: 5px; font-size: 19px;">Cell phone - 88{{ $cel }}</p>
             <p >{{ $addresh }}</p>
             <p>Bangladesh</p>
             <br>
@@ -78,17 +79,18 @@
                 </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $subtotal = 0
+                    @endphp
                 @if(!empty($products))
-                        @php
-                            $subtotal = 0
-                        @endphp
+                        
                         @foreach($products['name'] as $index => $name)
                             <tr>
                                 <td>{{ $name }}</td>
                                 <td>{{ $products['desc'][$index] }}</td>
                                 <td>{{ $products['qty'][$index] }}</td>
-                                <td>{{ $products['price'][$index] }}</td>
-                                <td> {{ number_format($products['price'][$index]) * number_format($products['qty'][$index]) }} </td>
+                                <td>{{ $products['price'][$index] }}tk</td>
+                                <td> {{ $products['price'][$index] * $products['qty'][$index] }}tk </td>
                             </tr>
                             @php
                                 
@@ -107,24 +109,22 @@
                 $withDiscount =  $withShiping  - $discount;
                 $cashonDel = $withDiscount - $bkash;
             @endphp
-            <p style="text-align: right; font-size: 16px;">Subtotal: {{  $subtotal }}Tk </p>
+            <p style="text-align: right; font-size: 16px;">Subtotal: {{  $subtotal }}tk </p>
             <p style="text-align: right; font-size: 16px;">Shipping: 
-                {{ $shipping  }}Tk
+                {{ $shipping  }}tk
             </p>
-            <p style="text-align: right; font-size: 16px;">With Shipping
-                {{ $withShiping }}Tk
-            </p>
+
             <p style="text-align: right; font-size: 16px;">Discount: 
-                {{ $discount  }}Tk
+                {{ $discount  }}tk
             </p>
             <p style="text-align: right; font-size: 16px;">Grand Total: 
-                {{ $withDiscount }}Tk
+                {{ $withDiscount }}tk
             </p>
             <p style="text-align: right; font-size: 16px;">Advance Payment: 
-                {{ $bkash  }}Tk 
+                {{ $bkash  }}tk 
             </p>
             <br>
-            <p style="text-align: right; font-size: 19px;">Cash On Delivery : TK - {{ $cashonDel }}Tk</p>
+            <p style="text-align: right; font-size: 19px;">Cash On Delivery :  {{ $cashonDel }}tk</p>
         </div>
     </div>
 </body>
