@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "laravel-sheet-404319",
+  "private_key_id": "4dc6c051f5b4ebfd4dea749ff1783d1e9c633add",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCtfZseGOMEqy2F\n4ZmnXjNWn7B8/1v868nbYxS3vHKfd+lCfrDVP5XF1l+2URmDvqQthxfHkDobPdSq\n2OFS3rckd3QV6cjqjNG7JYUrclkqu6631P8HAblye0K3Wroo/appKSaJDze+11O6\nC1j3Xs6isS1Qj9+5mlUAIzrbOf3Vhryxp6O2vB+UaO2/yZk2UIJ0fHlzAcMvzmC6\n4TV9iu3xK4WnOMrN/pflohSeDbdTIGXCj2oCJ/Wqu+969USUJzx1t76cztn1CMz/\nBbNqJpNxwIt+bZVfVRjhqR9sqktUE0EQ8kz2KWEuHFpsoQg39CB73jktAmg+v85O\nC14EjWilAgMBAAECggEAKH4/NNSpNB9CFlQUOYjWobrPBjXSAiQErtSe8s2k0Uy7\nIH6Shot7STxihZrDQkk+Z7P23Gjw7wfM+f16Bg4en//TlAPHlds9XpmAziW34y4A\nNz8bMUb5Qlu7tDEUb1nZqwbkTCxFniEDFVLttnsl7ro88edK2DbJ7SjL5XxRH0Ob\nqPMLoMourA1Yyeg0RTnFgnROplqnO3/yr9stPAaKKHBrJMQaz0zmfYrLpesGVedH\ngfwfAtB2hK2HBzj93mMRK8i7x6rFmRjwPg8WgFwS6mcBDdR6yDMdqNTkZ3Zv6Cvw\nrEB3WgcghnO2DtUBwJSJiheidziUz4ZilkIibdVy9wKBgQDT6MM72410CXiP3vnc\nb/Y2RyqDTIITNGKwGnW8uVoAfzK7Qu48KpfCodovsrKe09uXx1hmL1sR/jXa8StU\nsWAAlVCFOiqeVN77IO4jRDjDBiy/ItuiLocly+A/Isp4suXm1oP+SUbYOBotZfbR\neNckUGJTC9JqxvzeUe4x6YEIlwKBgQDRln9C4Y2wREV/DYEzkSyBG9e2dZqlvt4I\n2DgswdGDamF/QMgvALnFZm+eJfH3FdBxE38YqSDl1Jr4s8ukgFBd0+czwV+8q20M\n5z/YY6y1Ad3dEBdB7gnbn0+JiEbPHP3Xiwlr/yRZDaK0vqZBITJ9FX+fJ8FoTKNl\nl/ikpWwkIwKBgHuiJaXapmC41do6oVR3DhME2kzYaluCCMHt7hs5mMUJcTPIDO6V\new1XGNETVRtNR6T57R1RK7UHt6wRYNJ82iH8+4l/MjZGFgI2aDmzJ9rA04KAd9vb\ngYYPuLmdNrvMxE01grTtU6P6t2sdPi9gbUUGkRcaop0hk46yBmKgdWPpAoGBAJ57\nAnf8PjuPJE3SVGQ93j0yZIbfnrS+Av8FIFUXqemJQ3gJ8FU6Yz7VGomnf7Oqlxcp\n+u0W1n1zqkttCQu2yw5n8We9TTtJFQiwxCJIHIwygSVryWpdKK8dY/NHTOPHtFqM\nE+/J2h5MpT+u+eA9zgOvgfVDBohrixKDO8ykGYWpAoGBAMih+C/3okHkKvnx4JbB\n7U8QoetyIMU752f4+R35LO69hZ6hzejQKmcrCS7VeKd9O1KOMsOjf89d75Lf6EkQ\nP5VLBIIZV/uVk8G5VRZ5AxRoiWtxrV6Npf5tNkh/9SmsomPf3+m8dNpDLHf2qhwG\ngSPJ//z3rHi9n5IYBBK0O2eg\n-----END PRIVATE KEY-----\n",
+  "client_email": "google-sheet-api@laravel-sheet-404319.iam.gserviceaccount.com",
+  "client_id": "100294182369514489847",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/google-sheet-api%40laravel-sheet-404319.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
