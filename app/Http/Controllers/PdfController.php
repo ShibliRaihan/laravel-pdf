@@ -39,8 +39,6 @@ class PdfController extends Controller
         $pdf->setPaper('A4', 'portrait');
         $content = $pdf->download('home.pdf');
         return $content;
-
-        // return view('receipt', $data);
     }
 
     public function store(Request $req){
